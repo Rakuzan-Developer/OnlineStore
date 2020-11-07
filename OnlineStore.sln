@@ -11,13 +11,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.Core.Common.Cac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.Core.Common.Logging", "OnlineStore.Core.Common.Logging\OnlineStore.Core.Common.Logging.csproj", "{E76B1142-0C4B-4C24-AA5D-9E2261922C00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Data.Entities", "OnlineStore.Data.Entities\OnlineStore.Data.Entities.csproj", "{2DB4D7E8-EA7C-4F50-8741-F7DC82B2CC01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.Data.Entities", "OnlineStore.Data.Entities\OnlineStore.Data.Entities.csproj", "{2DB4D7E8-EA7C-4F50-8741-F7DC82B2CC01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Data.Contracts", "OnlineStore.Data.Contracts\OnlineStore.Data.Contracts.csproj", "{5F7AD893-3B02-4720-A15A-D9C3C7EF75EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.Data.Contracts", "OnlineStore.Data.Contracts\OnlineStore.Data.Contracts.csproj", "{5F7AD893-3B02-4720-A15A-D9C3C7EF75EB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00-Core", "00-Core", "{229447A7-52BB-4698-9D5D-C8031B7FAC7C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Resource Access", "01-Resource Access", "{A0BC9DD6-0FD6-4976-BCEF-A6BA52A8738A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Data", "OnlineStore.Data\OnlineStore.Data.csproj", "{EBB2CF83-8246-4A76-8658-7406575BC621}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{5F7AD893-3B02-4720-A15A-D9C3C7EF75EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F7AD893-3B02-4720-A15A-D9C3C7EF75EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F7AD893-3B02-4720-A15A-D9C3C7EF75EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBB2CF83-8246-4A76-8658-7406575BC621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBB2CF83-8246-4A76-8658-7406575BC621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBB2CF83-8246-4A76-8658-7406575BC621}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBB2CF83-8246-4A76-8658-7406575BC621}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{E76B1142-0C4B-4C24-AA5D-9E2261922C00} = {229447A7-52BB-4698-9D5D-C8031B7FAC7C}
 		{2DB4D7E8-EA7C-4F50-8741-F7DC82B2CC01} = {A0BC9DD6-0FD6-4976-BCEF-A6BA52A8738A}
 		{5F7AD893-3B02-4720-A15A-D9C3C7EF75EB} = {A0BC9DD6-0FD6-4976-BCEF-A6BA52A8738A}
+		{EBB2CF83-8246-4A76-8658-7406575BC621} = {A0BC9DD6-0FD6-4976-BCEF-A6BA52A8738A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BE841AE3-CDC8-4045-889C-19141E2FF1DB}
