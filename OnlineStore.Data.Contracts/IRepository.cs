@@ -20,7 +20,7 @@ namespace OnlineStore.Data.Contracts
 
         void Update(TEntity entity);
 
-        void Delete(TKey key);
+        void Delete(TKey id);
 
         void Delete(TEntity entity);
 

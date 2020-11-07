@@ -12,41 +12,45 @@ using System.Threading.Tasks;
 
 namespace OnlineStore.Data
 {
-    public abstract class RepositoryBase<TEntity, TKey> : IRepository<TEntity, TKey>
+    public abstract class RepositoryBase<TEntity, TKey> : IRepository<TEntity, TKey>,IDisposable
         where TEntity : EntityBase<TKey>
     {
         private readonly DbContext _dbContext;
         private readonly DbSet<TEntity> _dbSet;
+        private bool _disposed;
 
         public RepositoryBase(DbContext dbContext)
         {
             _dbContext = dbContext;
             _dbSet = dbContext.Set<TEntity>();
         }
-
+        #region IRepositoryMembers
         public void Add(TEntity entity)
         {
-            throw new NotImplementedException();
+             _dbSet.Add(entity);
         }
 
-        public void Delete(TKey key)
+        public async void Delete(TKey id)
         {
-            throw new NotImplementedException();
+            var entity = await GetAsync(id);
+
+            Delete(entity);
         }
 
         public void Delete(TEntity entity)
         {
-            throw new NotImplementedException();
+            _dbContext.Entry(entity).State = EntityState.Deleted;
         }
+
 
         public IQueryable<TEntity> GetAll(int skip, int take)
         {
-            throw new NotImplementedException();
+            return _dbSet.OrderBy(q => q.Id).Skip(skip).Take(take);
         }
 
         public IQueryable GetAll(int skip, int take, Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return GetAll(skip, take).Where(predicate);
         }
 
         public  Task<TEntity> GetAsync(TKey Id)
@@ -56,12 +60,38 @@ namespace OnlineStore.Data
 
         public Task SaveChangeAsync()
         {
-            throw new NotImplementedException();
+            return _dbContext.SaveChangesAsync();
         }
 
         public void Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Attach(entity);
+
+            _dbContext.Entry(entity).State = EntityState.Modified;
         }
+        #endregion
+
+        #region IDisposable Members
+        ~RepositoryBase()
+        {
+            Dispose(false);
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        private void Dispose(bool disposing)
+        {
+            if (disposing && !_disposed)
+            {
+                _dbContext.Dispose();
+
+            }
+            _disposed = true;
+        }
+        #endregion
     }
 }
