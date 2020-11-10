@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -8,6 +9,20 @@ namespace OnlineStore.Core.Common.Contracts
     [DataContract]
     public class ApiResponse<T>
     {
+
+        public ApiResponse(HttpStatusCode statusCode, T result, string errorMessage = null )
+        {
+            StatusCode = (int)statusCode;
+            Result = result;
+            ErrorMessage = errorMessage;
+       
+        }
+
+        public ApiResponse()
+        {
+                
+        }
+
         [DataMember]
         public string Version { get { return "1.0"; } }
 

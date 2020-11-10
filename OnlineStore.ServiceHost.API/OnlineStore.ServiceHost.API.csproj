@@ -107,6 +107,12 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OnlineStore.Core.Common.Contracts\OnlineStore.Core.Common.Contracts.csproj">
+      <Project>{9b8128f8-bdb1-4c31-9a9e-c116b371a641}</Project>
+      <Name>OnlineStore.Core.Common.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
